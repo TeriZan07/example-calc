@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>${.title}</title>
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <script src="../../js/jquery.js"></script>
+  <script src="../../js/bootstrap.js"></script>
+  <script src="../../js/vue.js"></script>
+  <script src="../../js/axios.js"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-success bg-opacity-75">
+  <div class="row container-fluid text-center">
+    <span class="text-white">${.title}</span>
+  </div>
+</nav>
+
+<div class="pt-2">
+  <div id="calc_section" class="container-lg">
+    <div class="row">
+      <div class="col-2">
+        <input type="number" v-model.number="input.x"/>
+      </div>
+      <div class="col-2">
+        <input type="number" v-model.number="input.y"/>
+      </div>
+      <div class="col-2">
+        <input type="number" v-model.number="input.z"/>
+      </div>
+
+      <div class="col-2">
+        <button class="btn btn-sm btn-info" v-on:click="doCalc('sum')">Suma</button>
+        <button class="btn btn-sm btn-info" v-on:click="doCalc('mul')">Mult</button>
+      </div>
+
+    </div>
+
+    <div v-if="result.count > 0 && error === ''">
+      <span class="text-black">El resultado es {{result.result}} ({{result.count}} numeros recibidos)</span>
+    </div>
+
+  </div>
+</div>
+
+</body>
+
+<script src="../../js/calc_section.js"></script>
+
+</html>
