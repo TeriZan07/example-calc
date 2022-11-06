@@ -24,7 +24,7 @@ let calcSection = new Vue({
         this.result = resp.data;
       })
       .catch(err => {
-        this.error = err;
+        this.error = err.response.data;
       });
     },
   }

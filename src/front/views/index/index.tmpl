@@ -41,7 +41,9 @@
     <div v-if="result.count > 0 && error === ''">
       <span class="text-black">El resultado es {{result.result}} ({{result.count}} numeros recibidos)</span>
     </div>
-
+    <div v-if="error !== ''">
+      <span class="text-danger">{{error}}</span>
+    </div>
   </div>
 </div>
 
